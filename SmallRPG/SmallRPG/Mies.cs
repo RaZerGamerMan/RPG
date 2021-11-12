@@ -7,32 +7,16 @@ using static System.Console;
 
 namespace SmallRPG
 {
-    class Mies
+    class Mies : Enemy
     {
-        private string Name;
-        private int Health;
-        private string TextArt;
-        private ConsoleColor Color;
         private int ChargeAttack;
 
         public Mies(string name, int health, ConsoleColor color, int chargeAttack)
+            : base(name, health, color, Arts.Mies)
         {
-            Name = name;
-            Health = health;
-            Color = color;
             ChargeAttack = chargeAttack;
-            TextArt = Arts.Mies;
         }
 
-        public void DisplayInfo()
-        {
-            ForegroundColor = Color;
-            WriteLine($"---------{Name}---------");
-            WriteLine($"\n{TextArt}\n");
-            WriteLine($"Elämäpisteet: {Health}");
-            WriteLine("---");
-            ResetColor();
-        }
 
         public void Charge()
         {
