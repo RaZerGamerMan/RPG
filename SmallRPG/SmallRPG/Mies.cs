@@ -36,12 +36,18 @@ namespace SmallRPG
 
         public void Charge()
         {
-            WriteLine($"{Name} hyökkää päälle ja lyö kovaa vasemmalla koukulla {ChargeAttack} kertaa!");
+            BackgroundColor = Color;
+            Write($" {Name} ");
+            ResetColor();
+            WriteLine($"  hyökkää päälle ja lyö kovaa vasemmalla koukulla {ChargeAttack} kertaa!");
         }
 
         public void Hit()
         {
-            WriteLine($"{Name} lyö oikealla koukulla!");
+            BackgroundColor = Color;
+            Write($" {Name} ");
+            ResetColor();
+            WriteLine($"  lyö oikealla koukulla!");
         }
     }
 }
