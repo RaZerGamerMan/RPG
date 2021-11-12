@@ -22,8 +22,11 @@ namespace SmallRPG
 
         public void DisplayInfo()
         {
+            BackgroundColor = Color;
+            WriteLine($"---{Name}---");
+            ResetColor();
+
             ForegroundColor = Color;
-            WriteLine($"---------{Name}---------");
             WriteLine($"\n{TextArt}\n");
             WriteLine($"Elämäpisteet: {Health}");
             WriteLine("---");

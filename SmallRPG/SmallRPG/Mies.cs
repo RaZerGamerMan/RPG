@@ -10,11 +10,17 @@ namespace SmallRPG
     class Mies : Enemy
     {
         private int ChargeAttack;
+        private Item CurrentItem;
 
         public Mies(string name, int health, ConsoleColor color, int chargeAttack)
             : base(name, health, color, Arts.Mies)
         {
             ChargeAttack = chargeAttack;
+        }
+
+        public void PickUpItem(Item item)
+        {
+            CurrentItem = item;
         }
 
 
@@ -24,6 +30,11 @@ namespace SmallRPG
             Write($" {Name} ");
             ResetColor();
             WriteLine($"  hyökkää päälle ja lyö kovaa vasemmalla koukulla {ChargeAttack} kertaa!");
+
+            if (CurrentItem != null)
+            {
+                WriteLine($"Hänellä on {CurrentItem.Name}!");
+            }
         }
 
         public void Hit()

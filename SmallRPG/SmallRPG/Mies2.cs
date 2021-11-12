@@ -31,8 +31,16 @@ namespace SmallRPG
             BackgroundColor = Color;
             Write($" {Name} ");
             ResetColor();
-            WriteLine(" ");
-            if (KnifeAttack) WriteLine("");
+            WriteLine(" otaa taskustaan jotain outoa ja lyö ");
+            if (KnifeAttack)
+            {
+                WriteLine(" puukolla jalkaasi!");
+            }
+            else
+            {    
+                WriteLine(" puukolla käteesi!");
+            }
+
 
         }
     }
