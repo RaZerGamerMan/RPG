@@ -12,11 +12,13 @@ namespace SmallRPG
 
         private Mies Jorma;
         private Mies Seppo;
+        private Mies2 Raimo;
 
         public Game()
         {
             Jorma = new Mies("Jorma", 20, ConsoleColor.Blue, 2);
             Seppo = new Mies("Seppo", 50, ConsoleColor.DarkGreen, 4);
+            Raimo = new Mies2("Raimo", 75, ConsoleColor.Yellow, true);
         }
 
 
@@ -34,6 +36,9 @@ namespace SmallRPG
             WriteLine();
             Seppo.Charge();
             Seppo.Hit();
+            WriteLine();
+
+            Raimo.DisplayInfo();
             WriteLine();
 
             WaitForKey();
