@@ -9,12 +9,12 @@ namespace SmallRPG
 {
     class Mies3 : Enemy
     {
-        private bool KnifeAttack;
+        private bool SmallKnifeAttack;
 
         public Mies3(string name, int health, ConsoleColor color, bool knifeAttack)
-            : base(name, health, color, Arts.Mies2)
+            : base(name, health, color, Arts.Mies3)
         {
-            KnifeAttack = knifeAttack;
+            SmallKnifeAttack = knifeAttack;
         }
 
         public void Surprise()
@@ -22,23 +22,23 @@ namespace SmallRPG
             BackgroundColor = Color;
             Write($" {Name} ");
             ResetColor();
-            WriteLine(" yllättää sinut takaapäin!");
+            WriteLine(" tulee luoksesi ja läimäisee!");
 
         }
 
-        public void Knife()
+        public void SmallKnife()
         {
             BackgroundColor = Color;
             Write($" {Name} ");
             ResetColor();
-            WriteLine(" otaa taskustaan jotain outoa ja lyö ");
-            if (KnifeAttack)
+            WriteLine(" ottaa esille pienen veitsen ja lyö");
+            if (SmallKnifeAttack)
             {
-                WriteLine(" puukolla jalkaasi!");
+                WriteLine(" sinua naamaan!");
             }
             else
             {
-                WriteLine(" puukolla käteesi!");
+                WriteLine(" sinua vatsaan!");
             }
 
 

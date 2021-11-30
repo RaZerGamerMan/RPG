@@ -14,6 +14,7 @@ namespace SmallRPG
         private Mies Seppo;
         private Mies2 Raimo;
         private Item Polttopullot;
+        private Mies3 Tanssija;
         
 
         public Game()
@@ -26,8 +27,10 @@ namespace SmallRPG
             Seppo.PickUpItem(Polttopullot);
 
             Raimo = new Mies2("Raimo", 75, ConsoleColor.Red, true);
-            
-            
+
+            Tanssija = new Mies3("Tanssija", 100, ConsoleColor.Green, true);
+
+
         }
 
 
@@ -51,6 +54,12 @@ namespace SmallRPG
             WriteLine();
             Raimo.Surprise();
             Raimo.Knife();
+            WriteLine();
+
+            Tanssija.DisplayInfo();
+            WriteLine();
+            Tanssija.Surprise();
+            Tanssija.SmallKnife();
             WriteLine();
 
             WaitForKey();
