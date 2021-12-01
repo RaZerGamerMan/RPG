@@ -44,5 +44,21 @@ namespace SmallRPG
             ResetColor();
             WriteLine($"  lyö oikealla koukulla!");
         }
+
+        public override void Fight()
+        {
+            ForegroundColor = Color;
+            WriteLine($"Mies {Name} tappelloo");
+            ResetColor();
+            int randNum = RandGenerator.Next(1, 101);
+            if (randNum <= 35)
+            {
+                Charge();
+            }
+            else
+            {
+                Hit();
+            }
+        }
     }
 }

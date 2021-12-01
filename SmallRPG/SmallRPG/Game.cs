@@ -10,25 +10,23 @@ namespace SmallRPG
     class Game
     {
 
-        private Mies Jorma;
-        private Mies Seppo;
-        private Mies2 Raimo;
-        private Item Polttopullot;
+        private List<Enemy> Enemies;
         
 
         public Game()
         {
             
-            Jorma = new Mies("Jorma", 20, ConsoleColor.Blue, 2);
+            Mies jorma = new Mies("Jorma", 20, ConsoleColor.Blue, 2);
 
-            Seppo = new Mies("Seppo", 50, ConsoleColor.DarkGreen, 4);
-            Polttopullot = new Item("Polttopullo", 2);
-            Seppo.PickUpItem(Polttopullot);
+            Mies seppo = new Mies("Seppo", 50, ConsoleColor.DarkGreen, 4);
+            Item polttopullo = new Item("Polttopullo", 2);
+            seppo.PickUpItem(polttopullo);
 
-            Raimo = new Mies2("Raimo", 75, ConsoleColor.Red, true);
+            Mies2 raimo = new Mies2("Raimo", 75, ConsoleColor.Red, true);
 
+            //Polymorfismia
+            Enemies = new List<Enemy>() { jorma, seppo, raimo };
             
-
 
         }
 
@@ -37,24 +35,34 @@ namespace SmallRPG
         {
             WriteLine("### PIENI RPG ###\n");
 
-            Jorma.DisplayInfo();
-            WriteLine();
-            Jorma.Charge();
-            Jorma.Hit();
-            WriteLine();
+            foreach (Enemy enemy in Enemies)
+            {
+                enemy.DisplayInfo();
+                enemy.Fight();
+                WriteLine();
+                //WriteLine("\nInstance Info:");
+                //WriteLine($" >What is this instance? {enemy.GetType()}");
+                //WriteLine($" >Is this an object? {enemy is object}");
+                //WriteLine($" >Is this an enemy? {enemy is Enemy}");
+                //WriteLine($" >Is this an Mies? {enemy is Mies}");
+                //WriteLine($" >Is this an Mies2? {enemy is Mies2}");
 
-            Seppo.DisplayInfo();
-            WriteLine();
-            Seppo.Charge();
-            Seppo.Hit();
-            WriteLine();
-
-            Raimo.DisplayInfo();
-            WriteLine();
-            Raimo.Surprise();
-            Raimo.Knife();
-            WriteLine();
-
+                //if (enemy is Mies)
+                //{
+                //Mies mies = enemy as Mies;
+                //mies.Charge();
+                //mies.Hit();
+                //}
+                //else if (enemy is Mies)
+                //{
+                //Mies2 mies2 = enemy as Mies2;
+                //mies2.Knife();
+                //mies2.Surprise();
+                //}
+                
+            }
+        
+    
             WaitForKey();
         }
 

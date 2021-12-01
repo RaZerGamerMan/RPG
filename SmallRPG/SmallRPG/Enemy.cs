@@ -11,6 +11,7 @@ namespace SmallRPG
         protected int Health;
         protected string TextArt;
         protected ConsoleColor Color;
+        protected Random RandGenerator;
 
         public Enemy(string name, int health, ConsoleColor color, string textArt)
         {
@@ -18,6 +19,7 @@ namespace SmallRPG
             Health = health;
             Color = color;
             TextArt = textArt;
+            RandGenerator = new Random();
         }
 
         public void DisplayInfo()
@@ -31,6 +33,11 @@ namespace SmallRPG
             WriteLine($"Elämäpisteet: {Health}");
             WriteLine("---");
             ResetColor();
+        }
+        public virtual void Fight()
+        {
+
+            WriteLine("tapellaaaaan!");
         }
 
     }

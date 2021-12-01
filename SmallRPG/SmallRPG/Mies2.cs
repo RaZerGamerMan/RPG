@@ -15,6 +15,7 @@ namespace SmallRPG
             : base(name, health, color, Arts.Mies2)
         {
             KnifeAttack = knifeAttack;
+            RandGenerator = new Random();
         }
 
         public void Surprise()
@@ -42,6 +43,22 @@ namespace SmallRPG
             }
 
 
+        }
+        public override void Fight()
+        {
+            RandGenerator.Next(1, 101);
+            ForegroundColor = Color;
+            WriteLine($"Mies2 {Name} tappelloo");
+            int randNum = RandGenerator.Next(1, 101);
+            if (randNum <= 50)
+            {
+                Surprise();
+            }
+            else
+            {
+                Knife();
+            }
+            ResetColor();
         }
     }
 }
