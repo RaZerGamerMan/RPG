@@ -8,6 +8,16 @@ namespace SmallRPG
 {
     static class Arts
     {
+        public static string Pelaaja = @"
+                 ,#####,
+                 #_   _#
+                 |a` `a|
+                 |  u  |
+                 \  =  /
+                 |\___/|
+        ___ ____/:     :\____ ___
+      .'   `.-===-\   /-===-.`   '. ";
+
         public static string Mies = @"
    .------\ /------.
    |       -       |

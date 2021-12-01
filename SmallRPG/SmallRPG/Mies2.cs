@@ -7,7 +7,7 @@ using static System.Console;
 
 namespace SmallRPG
 {
-    class Mies2 : Enemy
+    class Mies2 : Character
     {
         private bool KnifeAttack;
 
@@ -44,11 +44,11 @@ namespace SmallRPG
 
 
         }
-        public override void Fight()
+        public override void Fight(Character otherCharacter)
         {
             RandGenerator.Next(1, 101);
             ForegroundColor = Color;
-            WriteLine($"Mies2 {Name} tappelloo");
+            WriteLine($"Mies2 {Name} lyö {otherCharacter.Name}a");
             int randNum = RandGenerator.Next(1, 101);
             if (randNum <= 50)
             {

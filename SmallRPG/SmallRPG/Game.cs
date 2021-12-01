@@ -10,7 +10,8 @@ namespace SmallRPG
     class Game
     {
 
-        private List<Enemy> Enemies;
+        private Pelaaja CurrentPlayer;
+        private List<Character> Enemies;
         
 
         public Game()
@@ -25,7 +26,7 @@ namespace SmallRPG
             Mies2 raimo = new Mies2("Raimo", 75, ConsoleColor.Red, true);
 
             //Polymorfismia
-            Enemies = new List<Enemy>() { jorma, seppo, raimo };
+            Enemies = new List<Character>() { jorma, seppo, raimo };
             
 
         }
@@ -35,34 +36,21 @@ namespace SmallRPG
         {
             WriteLine("### PIENI RPG ###\n");
 
-            foreach (Enemy enemy in Enemies)
-            {
-                enemy.DisplayInfo();
-                enemy.Fight();
-                WriteLine();
-                //WriteLine("\nInstance Info:");
-                //WriteLine($" >What is this instance? {enemy.GetType()}");
-                //WriteLine($" >Is this an object? {enemy is object}");
-                //WriteLine($" >Is this an enemy? {enemy is Enemy}");
-                //WriteLine($" >Is this an Mies? {enemy is Mies}");
-                //WriteLine($" >Is this an Mies2? {enemy is Mies2}");
+            CurrentPlayer = new Pelaaja("Tero", 50, ConsoleColor.DarkCyan);
+            CurrentPlayer.DisplayInfo();
+            //kaikki voi tapella keskenään.
+            CurrentPlayer.Fight(Enemies[0]);
+            CurrentPlayer.Fight(Enemies[1]);
+            CurrentPlayer.Fight(Enemies[2]);
+            Enemies[0].Fight(CurrentPlayer);
+            Enemies[0].Fight(Enemies[1]);
 
-                //if (enemy is Mies)
-                //{
-                //Mies mies = enemy as Mies;
-                //mies.Charge();
-                //mies.Hit();
-                //}
-                //else if (enemy is Mies)
-                //{
-                //Mies2 mies2 = enemy as Mies2;
-                //mies2.Knife();
-                //mies2.Surprise();
-                //}
-                
-            }
-        
-    
+            // loopataan
+            // elämäpisteet, pelaaja voi valita, minkä hyökkäyksen haluaa valita
+            // pelaaja voi hyökätä viholliseen ja näytä tulokset
+            // näytetään uudestaan päivitetyt elämäpisteet
+            // katsotaan kuoleeko vihollinen
+            // vihollinen voi hyökätä pelaajaan ja näytä tulokset
             WaitForKey();
         }
 

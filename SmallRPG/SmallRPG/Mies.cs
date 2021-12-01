@@ -7,7 +7,7 @@ using static System.Console;
 
 namespace SmallRPG
 {
-    class Mies : Enemy
+    class Mies : Character
     {
         private int ChargeAttack;
         private Item CurrentItem;
@@ -45,10 +45,10 @@ namespace SmallRPG
             WriteLine($"  lyö oikealla koukulla!");
         }
 
-        public override void Fight()
+        public override void Fight(Character otherCharacter)
         {
             ForegroundColor = Color;
-            WriteLine($"Mies {Name} tappelloo");
+            WriteLine($"Mies {Name} lyö {otherCharacter.Name}a");
             ResetColor();
             int randNum = RandGenerator.Next(1, 101);
             if (randNum <= 35)

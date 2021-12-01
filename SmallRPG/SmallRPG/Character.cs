@@ -5,15 +5,15 @@ using static System.Console;
 
 namespace SmallRPG
 {
-    class Enemy
+    class Character
     {
-        protected string Name;
-        protected int Health;
-        protected string TextArt;
-        protected ConsoleColor Color;
-        protected Random RandGenerator;
+        public string Name { get; protected set; }
+        public int Health { get; protected set; }
+        public string TextArt { get; protected set; }
+        public ConsoleColor Color { get; protected set; }
+        public Random RandGenerator { get; protected set; }
 
-        public Enemy(string name, int health, ConsoleColor color, string textArt)
+        public Character(string name, int health, ConsoleColor color, string textArt)
         {
             Name = name;
             Health = health;
@@ -34,7 +34,7 @@ namespace SmallRPG
             WriteLine("---");
             ResetColor();
         }
-        public virtual void Fight()
+        public virtual void Fight(Character otherCharacter)
         {
 
             WriteLine("tapellaaaaan!");
