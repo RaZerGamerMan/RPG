@@ -46,19 +46,21 @@ namespace SmallRPG
         }
         public override void Fight(Character otherCharacter)
         {
+            //int randNum = RandGenerator.Next(1, 101);
             RandGenerator.Next(1, 101);
             ForegroundColor = Color;
             WriteLine($"Mies2 {Name} lyö {otherCharacter.Name}a");
-            int randNum = RandGenerator.Next(1, 101);
-            if (randNum <= 50)
-            {
-                Surprise();
-            }
-            else
-            {
-                Knife();
-            }
             ResetColor();
+
+            //if (randNum <= 50)
+            //{
+            //    Surprise();
+            //}
+            //else
+            //{
+            //    Knife();
+            //}
+            
         }
     }
 }

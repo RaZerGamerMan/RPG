@@ -47,18 +47,23 @@ namespace SmallRPG
 
         public override void Fight(Character otherCharacter)
         {
+            //WriteLine($"Mies {Name} lyö {otherCharacter.Name}a");
+            // -50% ajasta Charge
+            // -50% ajasta Charge menee ohi
             ForegroundColor = Color;
-            WriteLine($"Mies {Name} lyö {otherCharacter.Name}a");
             ResetColor();
-            int randNum = RandGenerator.Next(1, 101);
-            if (randNum <= 35)
+            int randPercent = RandGenerator.Next(1, 101);
+            Write($"Isäntä {Name} hyökkää {otherCharacter.Name}on ja ");
+            if (randPercent <= 50)
             {
-                Charge();
+                WriteLine("osuu 4 osumaa!");
+                otherCharacter.TakeDamage(4);
             }
             else
             {
-                Hit();
+                WriteLine("ohi menee...");
             }
+            ResetColor();
         }
     }
 }

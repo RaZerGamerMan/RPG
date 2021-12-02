@@ -9,6 +9,7 @@ namespace SmallRPG
     {
         public string Name { get; protected set; }
         public int Health { get; protected set; }
+        public int MaxHealth { get; protected set; }
         public string TextArt { get; protected set; }
         public ConsoleColor Color { get; protected set; }
         public Random RandGenerator { get; protected set; }
@@ -17,6 +18,7 @@ namespace SmallRPG
         {
             Name = name;
             Health = health;
+            MaxHealth = health;
             Color = color;
             TextArt = textArt;
             RandGenerator = new Random();
@@ -38,6 +40,37 @@ namespace SmallRPG
         {
 
             WriteLine("tapellaaaaan!");
+        }
+
+        public void TakeDamage(int damageAmount)
+        {
+            Health -= damageAmount;
+            if (Health < 0)
+            {
+                Health = 0;
+            }
+        }
+
+        public void DisplayHealthBar()
+        {
+            ForegroundColor = Color;
+            WriteLine($"{Name}n elämäpisteet:");
+            ResetColor();
+            Write("[");
+            // näytä täytetyt elämäpisteet
+            BackgroundColor = ConsoleColor.Green;
+            for (int i = 0; i < Health; i++)
+            {
+                Write(" ");
+            }
+            // näytä täyttämättömät elämäpisteet
+            BackgroundColor = ConsoleColor.Black;
+            for (int i = Health; i < MaxHealth; i++)
+            {
+                Write(" ");
+            }
+            ResetColor();
+            WriteLine($"] ({Health}/{MaxHealth})");
         }
 
     }
