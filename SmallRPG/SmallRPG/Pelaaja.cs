@@ -37,7 +37,7 @@ namespace SmallRPG
             if (randPercent <= 50)
             {
                 WriteLine("ja osuu ihan kunnolla!");
-                otherCharacter.TakeDamage(2);
+                otherCharacter.TakeDamage(4);
             }
             else
             {
