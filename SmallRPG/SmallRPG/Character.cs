@@ -57,13 +57,13 @@ namespace SmallRPG
             WriteLine($"{Name}n elämäpisteet:");
             ResetColor();
             Write("[");
-            // näytä täytetyt elämäpisteet
+            // näytä täytetyt elämäpalkit/pisteet
             BackgroundColor = ConsoleColor.Green;
             for (int i = 0; i < Health; i++)
             {
                 Write(" ");
             }
-            // näytä täyttämättömät elämäpisteet
+            // näytä täyttämättömät elämäpalkit/pisteet
             BackgroundColor = ConsoleColor.Black;
             for (int i = Health; i < MaxHealth; i++)
             {
