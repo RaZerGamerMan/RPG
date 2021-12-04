@@ -1,4 +1,5 @@
 ﻿using System;
+using static System.Console;
 
 namespace SmallRPG
 {
@@ -10,7 +11,23 @@ namespace SmallRPG
 
             Game myGame = new Game();
             myGame.Run();
+            bool isResponseValid = false;
+            do
+            {
+                WriteLine("Haluatko pelata uudelleen?(K/E)");
+                string response = ReadLine().Trim().ToUpper();
+                if (response == "K")
+                {
+                    Clear();
+                    myGame.Run();
+                }
+                else
+                {
+                    break;
+                }
 
+
+            } while (!isResponseValid);
         }
     }
 }
