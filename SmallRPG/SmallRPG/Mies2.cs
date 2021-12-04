@@ -49,7 +49,7 @@ namespace SmallRPG
             //int randNum = RandGenerator.Next(1, 101);
             RandGenerator.Next(1, 101);
             ForegroundColor = Color;
-            WriteLine($"Mies2 {Name} lyö {otherCharacter.Name}a");
+            WriteLine($"Isäntä {Name} lyö {otherCharacter.Name}a");
             ResetColor();
 
             //if (randNum <= 50)

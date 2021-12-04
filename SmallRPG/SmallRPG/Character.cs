@@ -13,6 +13,8 @@ namespace SmallRPG
         public string TextArt { get; protected set; }
         public ConsoleColor Color { get; protected set; }
         public Random RandGenerator { get; protected set; }
+        public bool IsDead { get => Health <= 0; }
+        public bool IsAlive { get => Health > 0; }
 
         public Character(string name, int health, ConsoleColor color, string textArt)
         {
@@ -54,7 +56,7 @@ namespace SmallRPG
         public void DisplayHealthBar()
         {
             ForegroundColor = Color;
-            WriteLine($"{Name}n elämäpisteet:");
+            WriteLine($"{Name} elämäpisteet:");
             ResetColor();
             Write("[");
             // näytä täytetyt elämäpalkit/pisteet

@@ -53,7 +53,7 @@ namespace SmallRPG
             ForegroundColor = Color;
             ResetColor();
             int randPercent = RandGenerator.Next(1, 101);
-            Write($"Isäntä {Name} hyökkää {otherCharacter.Name}on ja ");
+            Write($"Juoppo {Name} hyökkää sinuun ja ");
             if (randPercent <= 50)
             {
                 WriteLine("osuu 4 osumaa!");
