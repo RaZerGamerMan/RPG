@@ -22,9 +22,7 @@ namespace SmallRPG
             Mies jorma = new Mies("Jorma", 10, ConsoleColor.Blue, 2);
 
             Mies seppo = new Mies("Seppo", 20, ConsoleColor.DarkGreen, 4);
-            Item polttopullo = new Item("Polttopullo", 2);
-            seppo.PickUpItem(polttopullo);
-
+            
             Mies2 raimo = new Mies2("Raimo", 25, ConsoleColor.Red, true);
 
             // Polymorfismia

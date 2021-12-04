@@ -10,7 +10,7 @@ namespace SmallRPG
     class Mies : Character
     {
         
-        private Item CurrentItem;
+        
 
         public Mies(string name, int health, ConsoleColor color, int chargeAttack)
             : base(name, health, color, Arts.Mies)
@@ -18,10 +18,7 @@ namespace SmallRPG
             
         }
 
-        public void PickUpItem(Item item)
-        {
-            CurrentItem = item;
-        }
+
 
         public override void Fight(Character otherCharacter)
         {
