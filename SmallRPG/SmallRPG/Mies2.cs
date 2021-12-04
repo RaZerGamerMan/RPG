@@ -9,8 +9,6 @@ namespace SmallRPG
 {
     class Mies2 : Character
     {
-        
-
         public Mies2(string name, int health, ConsoleColor color, bool knifeAttack)
             : base(name, health, color, Arts.Mies2)
         {            

@@ -9,16 +9,11 @@ namespace SmallRPG
 {
     class Mies : Character
     {
-        
-        
-
         public Mies(string name, int health, ConsoleColor color, int chargeAttack)
             : base(name, health, color, Arts.Mies)
         {
             
         }
-
-
 
         public override void Fight(Character otherCharacter)
         {
