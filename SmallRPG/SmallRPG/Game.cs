@@ -65,7 +65,7 @@ namespace SmallRPG
 
             Write("Mikäs sinun nimesi on? ");
             string name = ReadLine();
-            CurrentPlayer = new Pelaaja(name, 100, ConsoleColor.DarkCyan);
+            CurrentPlayer = new Pelaaja(name, 50, ConsoleColor.DarkCyan);
 
             ForegroundColor = ConsoleColor.Green;
             WriteLine(@"Olet tehnyt raskaan työpäivän ja olet lempibaarisi edessä. Mikään ei tuntuisi nyt paremmalta, kuin kylmä huurteinen!
@@ -123,7 +123,7 @@ Vastassassi on nyt {Enemies.Count} juoppoa...
             if (CurrentPlayer.IsDead)
             {
                 WriteLine($@"{FiggleFonts.Epic.Render("Nyt kävi huonosti...")}
-Olet päihitetty ja baaritappelusi päättyi tähän.
+Olet päihitetty ja baaritappelusi päättyi tähän. Baarin henkilökunta soittaa ambulanssin ja sinut viedään sairaalaan.
 Yritä uudestaan paremmalla onnella!
 ");
             }

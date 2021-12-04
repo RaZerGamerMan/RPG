@@ -32,13 +32,13 @@ namespace SmallRPG
             {
                 WriteLine("ohi menee...");
             }
-            // -10% mahdollisuus kuolla puukkoon välittömästi
-            // -90% puukko menee ohi
+            // -6% mahdollisuus kuolla puukkoon välittömästi
+            // -94% puukko menee ohi
             Write($"Juoppo {Name} yrittää puukottaa sinua ja ");
-            if ( randPercent <= 10)
+            if ( randPercent <= 6)
             {
                 WriteLine("puukko uppoaa päähäsi, kuin sulaan voihin!!!");
-                otherCharacter.TakeDamage(100);
+                otherCharacter.TakeDamage(50);
             }
             else
             {
