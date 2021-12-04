@@ -67,7 +67,7 @@ namespace SmallRPG
 
             Write("Mikäs sinun nimesi on? ");
             string name = ReadLine();
-            CurrentPlayer = new Pelaaja(name, 25, ConsoleColor.DarkCyan);
+            CurrentPlayer = new Pelaaja(name, 100, ConsoleColor.DarkCyan);
 
             ForegroundColor = ConsoleColor.Green;
             WriteLine(@"Olet tehnyt raskaan työpäivän ja olet lempibaarisi edessä. Mikään ei tuntuisi nyt paremmalta, kuin kylmä huurteinen!
@@ -152,7 +152,7 @@ ASCII Art:
         {
             Clear();
             ForegroundColor = CurrentEnemy.Color;
-            WriteLine($"Vastustaja lähestyy...");
+            WriteLine($"Juoppo lähestyy...");
             ResetColor();
             CurrentEnemy.DisplayInfo();
             WriteLine();
