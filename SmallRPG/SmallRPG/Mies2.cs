@@ -9,58 +9,46 @@ namespace SmallRPG
 {
     class Mies2 : Character
     {
-        private bool KnifeAttack;
+        
 
         public Mies2(string name, int health, ConsoleColor color, bool knifeAttack)
             : base(name, health, color, Arts.Mies2)
-        {
-            KnifeAttack = knifeAttack;
+        {            
             RandGenerator = new Random();
         }
 
-        public void Surprise()
-        {
-            BackgroundColor = Color;
-            Write($" {Name} ");
-            ResetColor();
-            WriteLine(" yllättää sinut takaapäin!");
-
-        }
-
-        public void Knife()
-        {
-            BackgroundColor = Color;
-            Write($" {Name} ");
-            ResetColor();
-            WriteLine(" otaa taskustaan jotain outoa ja lyö ");
-            if (KnifeAttack)
-            {
-                WriteLine(" puukolla jalkaasi!");
-            }
-            else
-            {    
-                WriteLine(" puukolla käteesi!");
-            }
-
-
-        }
         public override void Fight(Character otherCharacter)
         {
-            //int randNum = RandGenerator.Next(1, 101);
-            RandGenerator.Next(1, 101);
+            // -60% ajasta lyö 6 osumaa
+            // -40% ajasta lyö ohi
             ForegroundColor = Color;
-            WriteLine($"Isäntä {Name} lyö {otherCharacter.Name}a");
+            ResetColor();
+            int randPercent = RandGenerator.Next(1, 101);
+            Write($"Juoppo {Name} lyö sinua ja ");
+            if (randPercent <= 60)
+            {
+                WriteLine("osuu 6 osumaa!");
+                otherCharacter.TakeDamage(6);
+            }
+            else
+            {
+                WriteLine("ohi menee...");
+            }
+            // -10% mahdollisuus kuolla puukkoon välittömästi
+            // -90% puukko menee ohi
+            Write($"Juoppo {Name} yrittää puukottaa sinua ja ");
+            if ( randPercent <= 10)
+            {
+                WriteLine("puukko uppoaa päähäsi, kuin sulaan voihin!!!");
+                otherCharacter.TakeDamage(100);
+            }
+            else
+            {
+                WriteLine("huitaisee ohitse.");
+            }
+
             ResetColor();
 
-            //if (randNum <= 50)
-            //{
-            //    Surprise();
-            //}
-            //else
-            //{
-            //    Knife();
-            //}
-            
         }
     }
 }

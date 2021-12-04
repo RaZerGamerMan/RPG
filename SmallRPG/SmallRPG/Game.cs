@@ -25,7 +25,7 @@ namespace SmallRPG
             Item polttopullo = new Item("Polttopullo", 2);
             seppo.PickUpItem(polttopullo);
 
-            Mies2 raimo = new Mies2("Raimo", 30, ConsoleColor.Red, true);
+            Mies2 raimo = new Mies2("Raimo", 25, ConsoleColor.Red, true);
 
             // Polymorfismia
             Enemies = new List<Character>() { jorma, seppo, raimo };
@@ -131,7 +131,7 @@ Yritä uudestaan paremmalla onnella!
             }
             else
             {
-                WriteLine($@"{FiggleFonts.Epic.Render("Olet voitokas!!")}
+                WriteLine($@"{FiggleFonts.Epic.Render("Onneksi olkoon!!")}
 Olet päihittänyt kaikki juopot baarista. Koko baari ylistää sinua ja taputtaa.
 Saat ilmaiset juomat baarin piikkiin seuraavaksi vuodeksi.
 Onneksi olkoon!

@@ -22,7 +22,7 @@ namespace SmallRPG
             if (randPercent <= 90)
             {
                 WriteLine("ja osuu!");
-                otherCharacter.TakeDamage(2);
+                otherCharacter.TakeDamage(3);
             }
             else
             {
@@ -34,10 +34,10 @@ namespace SmallRPG
         {
             Write("Lyöt ihan olan takaa ");
             int randPercent = RandGenerator.Next(1, 101);
-            if (randPercent <= 50)
+            if (randPercent <= 60)
             {
                 WriteLine("ja osuu ihan kunnolla!");
-                otherCharacter.TakeDamage(4);
+                otherCharacter.TakeDamage(6);
             }
             else
             {
@@ -46,13 +46,13 @@ namespace SmallRPG
         }
         public override void Fight(Character otherCharacter)
         {
-            //WriteLine($"Pelaaja {Name} lyö {otherCharacter.Name}a.");
+            
 
             ForegroundColor = Color;
             WriteLine($@"Vastassasi on {otherCharacter.Name}. Mitäpä haluaisit tehdä?
 
- 1) Heitä jakkaralla (90% mahdollisuus tehdä 2 osumaa)
- 2) Lyö ihan olan takaa (50% mahdollisuus tehdä 4 osumaa)
+ 1) Heitä jakkaralla (90% mahdollisuus tehdä 3 osumaa)
+ 2) Lyö ihan olan takaa (50% mahdollisuus tehdä 6 osumaa)
 ");
             ConsoleKeyInfo keyInfo = ReadKey(true);
             if (keyInfo.Key == ConsoleKey.D1)
